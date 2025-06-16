@@ -36,10 +36,10 @@ DoAction(key, winTitle, exePath := "", className := "", closeOnTriple := false) 
 
 
 Numpad1::
-HandleTap("Numpad1", "ahk_exe Cursor.exe", "C:\Users\Thato\AppData\Local\Programs\cursor\Cursor.exe")
+HandleTap("Numpad1", "ahk_exe Pomodoro.exe", "C:\Users\Thato\AppData\Local\Programs\Python\Python313\pythonw.exe C:\Coding\project\Pomodoro\script.py")
 return
 Numpad1Tap:
-DoAction("Numpad1", "ahk_exe Cursor.exe", "C:\Users\Thato\AppData\Local\Programs\cursor\Cursor.exe")
+DoAction("Numpad1", "ahk_exe Pomodoro.exe", "C:\Users\Thato\AppData\Local\Programs\Python\Python313\pythonw.exe C:\Coding\project\Pomodoro\script.py")
 return
 
 Numpad2::
@@ -54,13 +54,6 @@ HandleTap("Numpad3", "ahk_exe chrome.exe", "chrome.exe", "", true)
 return
 Numpad3Tap:
 DoAction("Numpad3", "ahk_exe chrome.exe", "chrome.exe", "", true)
-return
-
-Numpad4::
-HandleTap("Numpad4", "ahk_exe chatGPT.exe", "chatGPT.exe")
-return
-Numpad4Tap:
-DoAction("Numpad4", "ahk_exe chatGPT.exe", "chatGPT.exe")
 return
 
 Numpad5::
@@ -91,13 +84,13 @@ Numpad8Tap:
 DoAction("Numpad8", "ahk_exe GitHubDesktop.exe", "C:\Users\Thato\AppData\Local\GitHubDesktop\GitHubDesktop.exe")
 return
 
-
 Numpad9::
-HandleTap("Numpad9", "ahk_exe freeCodeCamp.exe", "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=idcicjmfdnncfmmgoogecnlfbkglgcak)
+HandleTap("Numpad9", "ahk_exe winexcel.exe", "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
 return
 Numpad9Tap:
-DoAction("Numpad9", "ahk_exe freeCodeCamp.exe", "C:\Program Files\Google\Chrome\Application\chrome_proxy.exe"  --profile-directory=Default --app-id=idcicjmfdnncfmmgoogecnlfbkglgcak)
+DoAction("Numpad9", "ahk_exe .winexcel.exe", "C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE")
 return
+
 
 ;Brings the browser to the front if it's open, else open the link
 
@@ -129,6 +122,12 @@ else
  Run, https://recentjobs.co.za/
 return
 
+NumpadRight::
+IfWinExist, ChatGPT - Google Chrome
+  WinActivate
+else
+ Run, https://chatgpt.com/?utm_source=google&utm_medium=paidsearch_brand&utm_campaign=DEPT_SEM_Google_Brand_Acquisition_EMEA_SouthAfrica_Consumer_CPA_BAU_Mix_OfficialEnglish_HighRisk&utm_term=chatgpt&gad_source=1&gad_campaignid=22233293514&gbraid=0AAAAA-IW-UUaNFdBtkbYuYFUiJ3m6PLOs&gclid=Cj0KCQjwu7TCBhCYARIsAM_S3NgaL3gFFZJ6KPD__WMH5zTrFgBWbc05uahLbr4Zb2xx9OGoiOQTNSAaAo5yEALw_wcB
+return
 
 ;hotstrings
 
@@ -138,7 +137,7 @@ return
 :*:gcr::git commit -m 'refactor:
 :*:gad::git add .
 :*:gs::git status
-:*:gc::git checkout
+:*:gic::git checkout
 :*:gme::git merge
-:*:gdb::git -d branch
+:*:gdb::git branch -d
 :*:gcb::git checkout -b
